@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+#sudo apt-get install -y r-base-core dnsutils
+
 # example: 
 # for i in {1..250}; do dig +trace google.com @8.8.8.8 | tail -n2 | grep -i received | awk {'print $8'} >> /tmp/google.com; done && cat /tmp/google.com | Rscript -e 'stat=(scan("stdin")); print(quantile(stat, c(.50,.99)));' && rm /tmp/google.com
 
