@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-#vsudo apt-get install -y r-base-core dnsutils
+# sudo apt-get install -y r-base-core dnsutils
 
 # example:
 # dig +trace google.com @8.8.8.8 | tail -n2 | grep -i received
