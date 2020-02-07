@@ -1,6 +1,7 @@
 curl 1000 requests stats:
 
 99% stats:
+
 **Resolver/NS**|**`google`**|**`amazon`**|**`microsoft`**|**`cloudflare`**|**`hoster.by`**|**`reg.ru`**|**`afraid.org`**
 :-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:
 Google|54.00|12.59|24.00|7.51|92.00|44.00|780.87

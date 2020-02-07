@@ -1,6 +1,7 @@
 curl 1000 requests stats:
 
 50% stats:
+
 **FROM/TLS**|**aws server**|**laptop**
 :-----:|:-----:|:-----:
 tls12|27.87|124.90
@@ -9,6 +10,7 @@ diff|11.86|56.72
 ratio|174.09%|183.20%
 
 99% stats:
+
 **FROM/TLS**|**aws server**|**laptop**
 :-----:|:-----:|:-----:
 tls12|31.17|199.95
