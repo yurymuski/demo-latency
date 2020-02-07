@@ -6,6 +6,7 @@ curl 1000 requests stats:
 EU response ms|34.2|256.5
 Japan response ms|298.5|7.7
 diff|264.27|248.79
+
 99% stats:
 **Server/User location**|**From EU**|**From Japan**
 :-----:|:-----:|:-----:
