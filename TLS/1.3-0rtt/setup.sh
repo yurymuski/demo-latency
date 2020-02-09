@@ -23,7 +23,7 @@ server {
 #Server with TLS 1.3 0-rtt
 server {
         server_name tls13-0rtt.yurets.online;
-        listen 443 ssl;
+        listen 443;
 
         #ssl_certificate      /etc/letsencrypt/live/tls13-0rtt.yurets.online/fullchain.pem;
         #ssl_certificate_key  /etc/letsencrypt/live/tls13-0rtt.yurets.online/privkey.pem;

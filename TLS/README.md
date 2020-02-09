@@ -2,22 +2,22 @@ curl 1000 requests stats:
 
 50% stats:
 
-**FROM/TLS**|**aws server**|**laptop**
+**Server/User location**|**From laptop EU**|**From server JP**
 :-----:|:-----:|:-----:
-tls12|27.87|124.90
-tls13|16.01|68.18
-diff|11.86|56.72
-ratio|174.09%|183.20%
+TLS 1.2 JP response ms|612.99|24.81
+TLS 1.3 JP response ms|306.66|9.59
+diff|306.33|15.22
+ratio|199.89%|258.65%
 
 99% stats:
 
-**FROM/TLS**|**aws server**|**laptop**
+**Server/User location**|**From laptop EU**|**From server JP**
 :-----:|:-----:|:-----:
-tls12|31.17|199.95
-tls13|18.46|128.42
-diff|12.71|71.53
-ratio|168.89%|155.70%
+TLS 1.2 JP response ms|716.15|26.65
+TLS 1.3 JP response ms|376.38|16.60
+diff|339.77|10.05
+ratio|190.27%|160.57%
 
 **Conclusion**: 
-- `TLS 1.3` is `1.55x`-`1.83x` faster than `TLS 1.2`.
-- time savings 99% laptop: `71ms`
+- `TLS 1.3` is `1.6x`-`2.6x` faster than `TLS 1.2`.
+- time savings 99% laptop: `339ms`
