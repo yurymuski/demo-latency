@@ -5,9 +5,11 @@ add-apt-repository -y ppa:certbot/certbot && \
 apt-get update && \
 apt-get install -y certbot docker.io;
 
+systemctl enable docker --now;
+
 certbot certonly --standalone --non-interactive --agree-tos -d http3.yurets.online -m muski.yury@gmail.com
 
-docker pull ranadeeppolavarapu/nginx-http3
+docker pull ymuski/nginx-quic
 
 mkdir -p /opt/nginx/files/{gzip,brotli}
 wget -O /opt/nginx/files/demo.json http://www.json-generator.com/api/json/get/cpluFyieMi?indent=2
@@ -73,6 +75,12 @@ server {
                 index  index.html;
         }
 
+        location /hello {
+                return 200 "hello HTTP3\n";
+                add_header alt-svc 'h3-24=":443"; ma=86400, h3-23=":443"; ma=86400';
+                add_header Content-Type text/plain;
+        }
+
         location /brotli/ {
                 root   /usr/share/nginx/html;
                 index  index.html;
@@ -95,7 +103,8 @@ server {
 
 EOF
 
-docker run --name nginx -d -p 80:80 -p 443:443/tcp -p 443:443/udp -v /etc/letsencrypt/:/opt/nginx/certs/  -v /opt/nginx/conf/http3.conf:/etc/nginx/conf.d/http3.conf -v /opt/nginx/conf/nginx.conf:/etc/nginx/nginx.conf -v /opt/nginx/files/:/usr/share/nginx/html/   ranadeeppolavarapu/nginx-http3
+docker run --name nginx --restart always -d -p 80:80 -p 443:443/tcp -p 443:443/udp -v /etc/letsencrypt/:/opt/nginx/certs/  -v /opt/nginx/conf/http3.conf:/etc/nginx/conf.d/http3.conf -v /opt/nginx/conf/nginx.conf:/etc/nginx/nginx.conf -v /opt/nginx/files/:/usr/share/nginx/html/ ymuski/nginx-quic
 
 #checking
-docker run -it --rm ymuski/curl-http3 curl -ILv https://http3.yurets.online --http3
+docker run -it --rm ymuski/curl-http3 curl -Lv https://http3.yurets.online --http3
+docker run -it --rm ymuski/curl-http3 curl -Lv https://http3.yurets.online/hello --http3

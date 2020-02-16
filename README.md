@@ -1,6 +1,6 @@
 # demo-latency
 
-checking latency with `curl` (result in seconds):
+## checking latency with `curl` (result in seconds):
 ```
 cat > curl-format.txt <<EOF
 time_DNS_resolved:  %{time_namelookup}\n
@@ -16,12 +16,18 @@ EOF
 ```
 curl -w "@curl-format.txt" -L -o /dev/null -s "https://google.com/"
 ```
-reuse session:
+## reuse session:
 ```
 curl -w "@curl-format.txt" -L -o /dev/null -s "https://google.com/"  -o /dev/null/ "https://google.com/" 
 ```
 
-also usefull tool: `httpstat`
+## usefull tool: `httpstat`
 ```
 httpstat https://google.com/
+```
+
+## HTTP 3 checking
+
+```
+docker run -it --rm ymuski/curl-http3 curl -ILv https://blog.cloudflare.com --http3
 ```
