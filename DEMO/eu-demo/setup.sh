@@ -151,6 +151,6 @@ docker run --name nginx --restart always -d -p 80:80 -p 443:443/tcp -p 443:443/u
 #checking
 docker run -it --rm ymuski/curl-http3 curl -Lv https://eu.yurets.online --http3
 
-docker run -it --rm ymuski/curl-http3 curl -w "time_DNS_resolved: %{time_namelookup}, time_TCP_established: %{time_connect}, time_TLS_handshake_done: %{time_appconnect}, time_pretransfer: %{time_pretransfer}, time_redirect: %{time_redirect}, time_TTFB: %{time_starttransfer}, time_total: %{time_total}\n" -o /dev/null -s https://eu.yurets.online --http3
+docker run -it --rm ymuski/curl-http3 curl -w " time_DNS_resolved: %{time_namelookup}\n time_TCP_established: %{time_connect}\n time_TLS_handshake_done: %{time_appconnect}\n time_pretransfer: %{time_pretransfer}\n time_redirect: %{time_redirect}\n time_TTFB: %{time_starttransfer}\n time_total: %{time_total}\n" -o /dev/null -s https://eu.yurets.online --http3
 
 docker run -it --rm ymuski/curl-http3 ./httpstat.sh -Lv https://eu.yurets.online  --http3
