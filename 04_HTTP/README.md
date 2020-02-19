@@ -19,4 +19,4 @@ http3 response ms|1,318.27|608.38
 ratio|1.45|1.35
 
 **Conclusion**: 
-- HTTP3 responce is `1.35x`-`1.55x` faster than HTTP2.
+- HTTP3 response is `1.35x`-`1.55x` faster than HTTP2.

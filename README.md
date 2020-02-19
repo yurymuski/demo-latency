@@ -1,6 +1,6 @@
 # demo-latency
 
-## checking NS responce
+## checking NS response
 
 `dig +trace google.com @8.8.8.8 | tail -n2 | grep -i received`
 ```

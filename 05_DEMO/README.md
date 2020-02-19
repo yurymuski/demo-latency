@@ -19,5 +19,5 @@ diff|1,291.37|1,023.06
 ratio|7.03|11.02
 
 **Conclusion**: 
-- Server responce after all tuning in demo is `7x`-`34x` faster than default configured server.
+- Server response after all tuning in demo is `7x`-`34x` faster than default configured server.
 - time savings 99% laptop: `1291ms`

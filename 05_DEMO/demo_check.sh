@@ -11,7 +11,7 @@ for DOMAIN in {'eu.yurets.online','jp.yurets.online'}; do
   else
     CURL='curl'
   fi
-  # test domain responce
+  # test domain response
   docker run -it --rm ymuski/curl-http3 $CURL https://$DOMAIN
   for i in {1..1000}; do
     docker run -it --rm ymuski/curl-http3 $CURL -w "%{time_total}\n" -o /dev/null -s "https://${DOMAIN}" >> /tmp/${DOMAIN};
