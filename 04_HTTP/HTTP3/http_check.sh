@@ -5,7 +5,7 @@ set -e
 
 # docker run -it --rm ymuski/curl-http3 curl -w "%{time_total}\n" -o /dev/null -s "https://demo.site --http3"
 
-for PROTOCOL in {'http3',}; do
+for PROTOCOL in {'http3','http2'}; do
   if [ "$PROTOCOL" = "http2" ]; then
     CMD='docker run -it --rm curlimages/curl:7.68.0 curl --http2'
   else
