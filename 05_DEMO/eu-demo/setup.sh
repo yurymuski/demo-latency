@@ -82,7 +82,7 @@ server {
         }
 
         # Add Alt-Svc header to negotiate HTTP/3.
-        add_header alt-svc 'h3-24=":443"; ma=86400, h3-23=":443"; ma=86400';
+        add_header alt-svc 'h3-27=":443"; ma=86400';
 
         location / {
                 root   /usr/share/nginx/html;
@@ -91,7 +91,7 @@ server {
 
         location /hello {
                 return 200 "hello nginx latency-optimized config EU-demo server\n";
-                add_header alt-svc 'h3-24=":443"; ma=86400, h3-23=":443"; ma=86400';
+                add_header alt-svc 'h3-27=":443"; ma=86400';
                 add_header Content-Type text/plain;
         }
 
@@ -129,7 +129,7 @@ server {
         }
 
         # Add Alt-Svc header to negotiate HTTP/3.
-        add_header alt-svc 'h3-24=":443"; ma=86400, h3-23=":443"; ma=86400';
+        add_header alt-svc 'h3-27=":443"; ma=86400';
 
         location / {
                 root   /usr/share/nginx/html;
@@ -138,7 +138,7 @@ server {
 
         location /hello {
                 return 200 "hello nginx latency-optimized config EU-demo server\n";
-                add_header alt-svc 'h3-24=":443"; ma=86400, h3-23=":443"; ma=86400';
+                add_header alt-svc 'h3-27=":443"; ma=86400';
                 add_header Content-Type text/plain;
         }
 
