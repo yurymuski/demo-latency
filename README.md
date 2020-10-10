@@ -99,4 +99,6 @@ Checking latency with httpstat:
 
 `docker run -it --rm ymuski/curl-http3 ./httpstat.sh -ILv https://blog.cloudflare.com --http3`
 
+`docker run -it --rm ymuski/curl-http3 ./httpstat.sh -ILv https://yurets.pro --http3`
+
 ![](https://raw.githubusercontent.com/yurymuski/curl-http3/master/httpstat.png)
