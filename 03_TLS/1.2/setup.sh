@@ -37,6 +37,6 @@ server {
 }
 EOF
 
-certbot certonly --nginx --non-interactive --agree-tos -d tls12.yurets.online -m muski.yury@gmail.com
+certbot certonly --nginx --non-interactive --agree-tos -d tls12.yurets.online -m your_email@gmail.com
 sed -i 's/#ssl_/ssl_/g' /etc/nginx/sites-enabled/tls1.2
 service nginx reload

@@ -1,23 +1,34 @@
-curl 1000 requests stats:
+Test:
+```shell
+CLIENT_IP='5.188.114.136'
+scp 05_DEMO/demo_check.sh root@$CLIENT_IP:/opt/
+ssh root@$CLIENT_IP "chmod +x /opt/demo_check.sh"
 
-50% stats:
 
-**Server/User location**|**From laptop EU**|**From server EU**
-:-----:|:-----:|:-----:
-EU response ms|137.00|30.76
-Japan response ms|1,271.21|1,066.38
-diff|1,134.21|1,035.62
-ratio|9.28|34.66
+# default servers check
+for DOMAIN in {'us-demo-default.yurets.online','eu-demo-default.yurets.online','jp-demo-default.yurets.online'}; do ssh root@$CLIENT_IP "/opt/demo_check.sh $DOMAIN 'curl'"; done;
 
-99% stats:
 
-**Server/User location**|**From laptop EU**|**From server EU**
-:-----:|:-----:|:-----:
-EU response ms|214.20|102.15
-Japan response ms|1,505.57|1,125.21
-diff|1,291.37|1,023.06
-ratio|7.03|11.02
+# tuned servers check with HTTP3
+for DOMAIN in {'us-demo-tuned.yurets.online','eu-demo-tuned.yurets.online','jp-demo-tuned.yurets.online'}; do ssh root@$CLIENT_IP "/opt/demo_check.sh $DOMAIN 'curl --http3'"; done;
+
+```
+
+
+### Stats: 
+curl 1000 requests stats from MSK server:
+
+ stats:
+
+**Server response ms**|**50%**|**95%**|**99%**
+:-----:|:-----:|:-----:|:-----:
+EU tuned|105|109|122
+EU default|213|219|228
+Japan tuned|536|544|554
+Japan default|1076|1091|1102
+
 
 **Conclusion**: 
-- Server response after all tuning in demo is `7x`-`34x` faster than default configured server.
-- time savings 99% laptop: `1291ms`
+- Tuned server is 2x faster in same region
+- Tuned + GEO server is 10x faster
+- Benefit can be over 1 second

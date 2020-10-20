@@ -7,7 +7,7 @@ apt-get install -y certbot docker.io;
 
 systemctl enable docker --now;
 
-certbot certonly --standalone --non-interactive --agree-tos -d http3.yurets.online -m muski.yury@gmail.com
+certbot certonly --standalone --non-interactive --agree-tos -d http3.yurets.online -m your_email@gmail.com
 
 docker pull ymuski/nginx-quic
 
@@ -68,7 +68,7 @@ server {
         }
 
         # Add Alt-Svc header to negotiate HTTP/3.
-        add_header alt-svc 'h3-27=":443"; ma=86400';
+        add_header alt-svc 'h3-29=":443"; ma=86400';
 
         location / {
                 root   /usr/share/nginx/html;
@@ -77,7 +77,7 @@ server {
 
         location /hello {
                 return 200 "hello HTTP3\n";
-                add_header alt-svc 'h3-27=":443"; ma=86400';
+                add_header alt-svc 'h3-29=":443"; ma=86400';
                 add_header Content-Type text/plain;
         }
 

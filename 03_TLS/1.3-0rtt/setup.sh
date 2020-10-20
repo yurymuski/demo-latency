@@ -45,7 +45,7 @@ server {
 EOF
 
 sed -i 's/keepalive_timeout  65;/keepalive_timeout  5;/g' /etc/nginx/nginx.conf
-certbot certonly --nginx --non-interactive --agree-tos -d tls13-0rtt.yurets.online -m muski.yury@gmail.com
+certbot certonly --nginx --non-interactive --agree-tos -d tls13-0rtt.yurets.online -m your_email@gmail.com
 sed -i 's/#ssl_/ssl_/g' /etc/nginx/conf.d/tls1.3-0rtt.conf
 sed -i 's/listen 443;/listen 443 ssl;/g' /etc/nginx/conf.d/tls1.3-0rtt.conf
 service nginx reload
