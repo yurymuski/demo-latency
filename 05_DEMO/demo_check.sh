@@ -11,6 +11,7 @@ apt-get update && apt-get install -y r-base-core docker.io
 docker run -i --rm ymuski/curl-http3 $CURL -s https://$DOMAIN
 docker run -i --rm ymuski/curl-http3 ./httpstat.sh -Lv https://$DOMAIN
 
+# rm stats file if exists
 [ -e /tmp/${DOMAIN} ] && rm /tmp/${DOMAIN};
 
 for i in {1..1000}; do

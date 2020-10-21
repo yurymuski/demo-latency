@@ -15,7 +15,7 @@ for DOMAIN in {'us-demo-tuned.yurets.online','eu-demo-tuned.yurets.online','jp-d
 ```
 
 
-### Stats: 
+### Stats:
 curl 1000 requests stats from MSK server:
 
  stats:
@@ -29,6 +29,6 @@ Japan default|1076|1091|1102
 
 
 **Conclusion**: 
-- Tuned server is 2x faster in same region
-- Tuned + GEO server is 10x faster
+- Tuned server is `2x` faster in same region
+- Tuned + GEO server is `10x` faster
 - Benefit can be over 1 second
