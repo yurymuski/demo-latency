@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -ex
 
 apt-get update && apt-get install -y r-base-core curl gawk
 

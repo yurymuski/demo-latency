@@ -1,3 +1,4 @@
+### Stats:
 curl 1000 requests stats:
 
 50% stats:
@@ -18,4 +19,4 @@ diff|295.56|249.12
 
 
 **Conclusion**:
-- Geo DNS time savings up to `250-300ms`
+- Geo DNS time savings up to `250-300ms` per RTT

@@ -1,10 +1,10 @@
 ### Stats:
-curl 1000 requests stats from RU and US server:
+TLS 1.2 vs TLS 1.3 curl 1000 requests stats from RU and US server:
 
 
 50% stats:
 
-**Server/User location**|**From server RU**|**From server US**
+**TLS Protocol/User location**|**From server RU**|**From server US**
 :-----:|:-----:|:-----:
 TLS 1.2 JP response ms|541|257
 TLS 1.3 JP response ms|275|132

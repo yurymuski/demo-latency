@@ -1,6 +1,6 @@
 Test:
 ```shell
-CLIENT_IP='5.188.114.136'
+CLIENT_IP=''
 scp 05_DEMO/demo_check.sh root@$CLIENT_IP:/opt/
 ssh root@$CLIENT_IP "chmod +x /opt/demo_check.sh"
 
