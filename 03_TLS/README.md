@@ -13,7 +13,7 @@ ratio|196.7%|194.7%
 
 99% stats:
 
-**Server/User location**|**From server EU**|**From server US**
+**Server/User location**|**From server RU**|**From server US**
 :-----:|:-----:|:-----:
 TLS 1.2 JP response ms|550|267
 TLS 1.3 JP response ms|280|136
