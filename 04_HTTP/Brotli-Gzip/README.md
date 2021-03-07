@@ -21,7 +21,7 @@ Brotli 11 lvl|25.8
 ### Compression response curl 1000 requests stats:
 
 
-Compression response sec / User location|From laptop EU|From server EU
+Compression response sec / User location|From server EU|From server EU
 :-----:|:-----:|:-----:
 not compressed|	2.04|	1.56
 gzip min compression| 	1.52|	1.06
